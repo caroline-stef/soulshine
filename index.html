@@ -1,1 +1,450 @@
 
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Soulshine – Licht op de Essentie. Een plek voor ontmoeting, inspiratie en ontdekking.">
+  <title>Soulshine – Licht op de Essentie</title>
+
+  <style>
+    :root {
+      --achtergrond: #fffefa;
+      --licht: #f7f5ef;
+      --tekst: #403c36;
+      --zacht: #777168;
+      --goud: #ad9258;
+      --lijn: #e9e4d9;
+      --wit: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--achtergrond);
+      color: var(--tekst);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+      line-height: 1.25;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 88%);
+      margin: 0 auto;
+    }
+
+    /* Bovenkant en navigatie */
+
+    header {
+      background: var(--wit);
+      border-bottom: 1px solid var(--lijn);
+    }
+
+    .header-inner {
+      min-height: 112px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      padding: 18px 0;
+    }
+
+    .logo {
+      display: block;
+      width: 230px;
+      max-width: 48%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 28px;
+    }
+
+    nav a {
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: var(--tekst);
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--goud);
+    }
+
+    /* Welkom */
+
+    .hero {
+      padding: 94px 0 100px;
+      text-align: center;
+      background: var(--achtergrond);
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--goud);
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(38px, 6vw, 66px);
+      letter-spacing: -0.025em;
+    }
+
+    .subtitle {
+      margin: 18px 0 0;
+      color: var(--zacht);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(19px, 2.5vw, 25px);
+      font-style: italic;
+    }
+
+    .hero-line {
+      width: 58px;
+      height: 1px;
+      margin: 34px auto;
+      background: var(--goud);
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--zacht);
+      font-size: 17px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      border: 1px solid var(--goud);
+      color: var(--tekst);
+      font-size: 13px;
+      letter-spacing: 0.07em;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--goud);
+      color: var(--wit);
+    }
+
+    /* Over ons */
+
+    .about {
+      padding: 82px 0;
+      background: var(--licht);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .about-photo {
+      display: block;
+      width: 100%;
+      max-height: 490px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .section-label {
+      margin: 0 0 14px;
+      color: var(--goud);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .about h2,
+    .discover h2,
+    .contact h2 {
+      margin: 0 0 24px;
+      font-size: clamp(30px, 4vw, 43px);
+    }
+
+    .about p,
+    .contact p {
+      color: var(--zacht);
+    }
+
+    /* Ontdek */
+
+    .discover {
+      padding: 88px 0 96px;
+      text-align: center;
+    }
+
+    .discover-intro {
+      max-width: 620px;
+      margin: 0 auto 44px;
+      color: var(--zacht);
+    }
+
+    .activities {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      text-align: left;
+    }
+
+    .activity {
+      padding: 30px 27px;
+      border: 1px solid var(--lijn);
+      background: var(--wit);
+    }
+
+    .activity-number {
+      color: var(--goud);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+    }
+
+    .activity h3 {
+      margin: 14px 0 12px;
+      font-size: 24px;
+    }
+
+    .activity p {
+      margin-bottom: 0;
+      color: var(--zacht);
+      font-size: 15px;
+    }
+
+    /* Contact */
+
+    .contact {
+      padding: 76px 0 82px;
+      background: var(--licht);
+      text-align: center;
+    }
+
+    .contact p {
+      max-width: 590px;
+      margin: 0 auto;
+    }
+
+    footer {
+      padding: 28px 0;
+      background: var(--wit);
+      border-top: 1px solid var(--lijn);
+      text-align: center;
+      color: var(--zacht);
+      font-size: 13px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Mobiele weergave */
+
+    @media (max-width: 760px) {
+      .header-inner {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .logo {
+        width: 205px;
+        max-width: 85%;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px 22px;
+      }
+
+      .hero {
+        padding: 70px 0 76px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .about-photo {
+        max-height: 420px;
+      }
+
+      .about,
+      .discover {
+        padding: 64px 0;
+      }
+
+      .activities {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .activity {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="#home" aria-label="Soulshine home">
+        <img
+          class="logo"
+          src="soulshine-logo.png"
+          alt="Soulshine – Licht op de Essentie"
+        >
+      </a>
+
+      <nav aria-label="Hoofdnavigatie">
+        <a href="#home">Home</a>
+        <a href="#over-ons">Over ons</a>
+        <a href="#ontdek">Ontdek</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <p class="eyebrow">Welkom bij Soulshine</p>
+        <h1>Licht op de Essentie</h1>
+        <p class="subtitle">Ruimte om te ontdekken, te ontmoeten en te zijn</p>
+
+        <div class="hero-line"></div>
+
+        <p class="intro">
+          Een plek waar ruimte ontstaat voor inspiratie, verbinding
+          en nieuwe mogelijkheden. Waar je mag ontdekken wat voor jou
+          wezenlijk is.
+        </p>
+
+        <a class="button" href="#ontdek">ONTDEK SOULSHINE</a>
+      </div>
+    </section>
+
+    <section class="about" id="over-ons">
+      <div class="container about-grid">
+        <div>
+          <img
+            class="about-photo"
+            src="caroline-en-stef.jpeg"
+            alt="Caroline en Stef"
+          >
+        </div>
+
+        <div>
+          <p class="section-label">Wie we zijn</p>
+          <h2>Vanuit de essentie</h2>
+
+          <p>
+            Soulshine is ontstaan vanuit een verlangen om ruimte te geven
+            aan wat werkelijk leeft. Aan ontmoeting, inspiratie en het
+            delen van wat ons raakt.
+          </p>
+
+          <p>
+            We nemen je graag mee in onze wereld. Een wereld waarin
+            nieuwsgierigheid, eigenheid en verbinding alle ruimte krijgen.
+          </p>
+
+          <a class="button" href="#contact">MAAK KENNIS</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="discover" id="ontdek">
+      <div class="container">
+        <p class="section-label">Er is ruimte voor</p>
+        <h2>Ontdek Soulshine</h2>
+
+        <p class="discover-intro">
+          Verschillende ingangen, één uitnodiging: ontdek wat bij jou past.
+          Deze onderdelen vullen we later samen verder in.
+        </p>
+
+        <div class="activities">
+          <article class="activity">
+            <span class="activity-number">01</span>
+            <h3>Ontmoeten</h3>
+            <p>
+              Samenkomen, ervaringen delen en ruimte maken voor echte
+              ontmoeting.
+            </p>
+          </article>
+
+          <article class="activity">
+            <span class="activity-number">02</span>
+            <h3>Inspireren</h3>
+            <p>
+              Woorden, ideeën en inzichten die iets in beweging brengen
+              en je blik verruimen.
+            </p>
+          </article>
+
+          <article class="activity">
+            <span class="activity-number">03</span>
+            <h3>Ontdekken</h3>
+            <p>
+              Een verzameling van activiteiten, initiatieven en
+              mogelijkheden om verder te verkennen.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <p class="section-label">In verbinding</p>
+        <h2>Voel je welkom</h2>
+
+        <p>
+          Benieuwd naar Soulshine of wil je contact met ons opnemen?
+          Binnenkort vind je hier meer informatie.
+        </p>
+
+        <!-- Later vullen we hier het e-mailadres of contactformulier in. -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Soulshine · Licht op de Essentie</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
